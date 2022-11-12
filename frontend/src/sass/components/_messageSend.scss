@@ -1,0 +1,138 @@
+.message-send-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    align-items: center;
+
+    // bottom: 0;
+    // background-color: red;
+    // width: 100%;
+    .file {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        // justify-content: center;
+        // background-color: green;
+        font-size: 20px;
+        color: rgb(77, 77, 77);
+        cursor: pointer;
+
+        label {
+            display: flex;
+            align-items: center;
+        }
+
+        .add-attachment,
+        .add-image,
+        .add-gift {
+            position: fixed;
+            bottom: 44px;
+            background-color: rgb(0, 77, 64);
+            color: white;
+            padding: 5px;
+            border-radius: 8px;
+            font-size: 14px;
+            display: none;
+        }
+    }
+
+    .hover-attachment {
+        &:hover {
+            .add-attachment {
+                display: block;
+            }
+        }
+
+        label {
+            color: rgb(77, 77, 77);
+            cursor: pointer;
+        }
+    }
+
+    .hover-image {
+        &:hover {
+            .add-image {
+                display: block;
+            }
+        }
+
+        label {
+            color: rgb(77, 77, 77);
+            cursor: pointer;
+        }
+    }
+
+    .hover-gift {
+        &:hover {
+            .add-gift {
+                display: block;
+            }
+        }
+
+        label {
+            color: rgb(77, 77, 77);
+            cursor: pointer;
+        }
+    }
+
+    .message-type {
+        display: flex;
+        width: 70%;
+        height: 40px;
+        background-color: #dfdfdf;
+        border-radius: 50px;
+        border: none;
+        align-items: center;
+
+        .form-control {
+            width: 100%;
+            background-color: transparent;
+
+            &::placeholder {
+                color: gray;
+            }
+        }
+
+        label {
+            font-size: 20px;
+            margin-right: 5px;
+            color: rgb(77, 77, 77);
+            cursor: pointer;
+        }
+    }
+
+    .emoji-section {
+        width: 200px;
+        position: absolute;
+        bottom: 50px;
+        right: 10px;
+        padding: 8px;
+        border-radius: 8px;
+        background-color: rgb(0, 77, 64);
+        display: none;
+
+        .emoji {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+
+            span {
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    #pic {
+        display: none;
+    }
+
+    #emoji {
+        display: none;
+    }
+
+    #emoji:checked~.emoji-section {
+        display: block;
+    }
+}

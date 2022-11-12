@@ -1,0 +1,108 @@
+.message-show {
+    overflow-y: auto;
+    height: 100vh;
+    width: 100%;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .my-message {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 15px;
+        margin-right: 4px;
+        max-width: 100%;
+        // background-color: green;
+        .my-text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(0, 162, 255);
+            padding: 10px 10px;
+            border-radius: 5px;
+            color: white;
+            max-width: 400px;
+            // background-color: red;
+
+            img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        .time {
+            color: gray;
+            font-size: 13px;
+        }
+    }
+
+    .fd-message {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-top: 15px;
+
+        .image-message-time {
+            display: flex;
+            flex-direction: column;
+
+            .fd-text {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 4px;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                }
+
+                .message-text {
+                    margin-left: 4px;
+                    background-color: rgb(0, 162, 255);
+                    padding: 10px 10px;
+                    border-radius: 5px;
+                    color: white;
+                    max-width: 400px;
+                    img {
+                        width: 200px;
+                        height: 200px;
+                        border-radius: 0%;
+                    }
+
+                  
+                }
+               
+            }
+
+            .time {
+                color: gray;
+                font-size: 13px;
+                margin-left: 4px;
+            }
+
+            .typing-message {
+                background-color: #fff; 
+                margin-left: 4px;
+             }
+        }
+    }
+    .friend-image-name{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .image{
+            margin-top: 7px;
+            margin-bottom: 7px;
+            width: 100px;
+            height: 100px;
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.card{
+    width: 378px;
+    padding: 15px 20px;
+    background-color: #1c3f8fd4;
+    box-shadow: 0px 8px 25px #f5f0f0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.form-control {
+    padding: 12px;
+    border: none;
+    outline: none;
+    background-color: #0a0e1585;
+    &::placeholder {
+        font-weight: 400;
+        color: #fff;
+    }
+}
+
+label{
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.btn {
+    padding: 10px;
+    color: rgb(196, 196, 196);
+    text-align: center;
+    width: 200px;
+    background-color: #0a0d1385;
+    border: none;
+    font-size: large;
+    align-self: center;
+    cursor: pointer;
+}

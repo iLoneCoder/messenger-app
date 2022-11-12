@@ -1,0 +1,93 @@
+.dropdown-content {
+    position: absolute;
+    padding: 5px;
+    background-color: rgb(182, 190, 163);
+    border-radius: 5px;
+    width: 150px;
+    margin-top: 2px;
+    .form-group {
+        display: flex;
+        flex-direction: row;
+        // background-color: green;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        label {
+            color: black;
+        }
+
+        p {
+            color: black;
+            font-weight: 450;
+            cursor: pointer;
+        }
+
+        .radio-switch {
+            display: inline-flex;
+            padding: 3px;
+            border-radius: 20px;
+            border: 1px solid black;
+            list-style-type: none;
+            // background-color: white;
+            .radio-switch-item {
+                position: relative;
+                height: 10px;
+                width: 20px;
+
+                input {
+                    display: none;
+                }
+
+            }
+
+            .radio-switch-label {
+                position: relative;
+                z-index: 1;
+                display: block;
+                line-height: 10px;
+                cursor: pointer;
+                font-size: 15px;
+                text-align: center;
+                border-radius: 20px;
+
+                // background-color: red;
+            }
+
+            .radio-switch-maker {
+                position: absolute;
+                width: 20px;
+                height: 10px;
+                left: 0;
+                bottom: 0;
+                // z-index: -1;
+                // background-color: green;
+                border-radius: 20px;
+                transition: transform 0.3s;
+
+
+            }
+
+            .radio-switch-input:checked ~ .radio-switch-maker {
+                background-color: green;
+            }
+
+            .radio-switch-input:checked ~ .radio-switch-label {
+                color: white;
+            }
+
+        }
+
+        .sign-out {
+            display: inline-flex;
+            padding: 3px;
+            width: 40px;
+            border-radius: 20px;
+            // border: 1px solid black;
+            // background-color: white;
+            color: white;
+            margin-left: 55px;
+            cursor: pointer;
+        }
+
+    }
+}
