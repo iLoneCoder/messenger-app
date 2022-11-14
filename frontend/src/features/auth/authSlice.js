@@ -4,6 +4,7 @@ import jwt_decode from "jwt-decode"
 
 
 
+
 let MY_INFO //= JSON.parse(localStorage.getItem("user"))
 const str = document.cookie.split("; ").find(el => el.startsWith("authToken"))
 
@@ -32,7 +33,8 @@ const initialState = {
     successMessage: "",
     error: [],
     errorMessage: "",
-    myInfo: MY_INFO ? MY_INFO : null
+    myInfo: MY_INFO ? MY_INFO : null,
+    passwordChanged: false
 }
 
 export const register = createAsyncThunk("auth/register", async (formData, thunkAPI) => {
@@ -65,6 +67,26 @@ export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
     }
 })
 
+export const forgotPassword = createAsyncThunk("messenger/forgot-password", async (userData, thunkAPI) => {
+    try {
+        return await authService.forgotPassword(userData)
+    } catch (error) {
+        const message = error.response.data.message
+
+        return thunkAPI.rejectWithValue(message)
+    }
+})
+
+export const changePassword = createAsyncThunk("messenger/change-password", async (userData, thunkAPI) => {
+    try {
+        return await authService.changePassword(userData)
+    } catch (error) {
+        const message = error.response.data.message
+
+        return thunkAPI.rejectWithValue(message)
+    }
+})
+
 const authSlice = createSlice({
     name: "auth",
     initialState,
@@ -79,6 +101,7 @@ const authSlice = createSlice({
         },
         resetMessage: (state) => {
             state.successMessage = ""
+            state.errorMessage = ""
         }
     },
     extraReducers: (builder) => {
@@ -125,7 +148,31 @@ const authSlice = createSlice({
                 state.myInfo = null
 
             })
-    }
+            //forgot password
+            .addCase(forgotPassword.pending, state => {
+                state.loading = true
+            })
+            .addCase(forgotPassword.fulfilled, (state, action) => {
+                state.loading = false
+                // state.successMessage = action.payload.message
+            })
+            .addCase(forgotPassword.rejected, (state, action) => {
+                state.loading = false
+                // state.errorMessage = action.payload
+            })
+            //change password
+            .addCase(changePassword.pending, state => {
+                state.loading = true
+            })
+            .addCase(changePassword.fulfilled, (state, action) => {
+                state.loading = false
+                state.passwordChanged = action.payload.success
+            })
+            .addCase(changePassword.rejected, (state, action) => {
+                state.loading = false
+                state.errorMessage = "Something went wrong, send email again!"
+            })
+        }
 
 })
 

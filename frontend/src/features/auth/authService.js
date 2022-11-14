@@ -52,10 +52,39 @@ const logout = async () => {
     return response.data
 }
 
+
+const forgotPassword = async (userData) => {
+    const config = {
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }
+
+    const response = await axios.post("/api/messenger/forgot-password", userData, config)
+
+    return response.data
+}
+
+const changePassword = async (userData) => {
+    const config = {
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }
+
+    const { token } = userData
+    delete userData.token
+    const response = await axios.post(`/api/messenger/change-password/${token}`, userData, config)
+
+    return response.data
+}
+
 const authService = {
     register,
     login,
-    logout
+    logout,
+    forgotPassword,
+    changePassword
 }
 
 export default authService

@@ -5,47 +5,65 @@
     display: flex;
     justify-content: center;
     align-items: center;
-   .card {
+
+    .card {
         .card-header {
             h3 {
                 text-align: center;
                 color: #fff;
             }
+
+            .description {
+                margin-top: 5px;
+                padding: 3px;
+                text-align: center;
+                background-color: rgb(117, 117, 82);
+                color: rgb(247, 165, 165);
+            }
         }
+
         .card-body {
             .form-group {
                 .form-control {
                     color: #fff;
                 }
+
                 span {
                     text-align: center;
+
                     a {
                         text-decoration: none;
                         color: #fff;
                     }
                 }
+
                 .file-image {
                     display: flex;
+
                     .image {
-                       width: 50px;
-                       height: 50px;
-                       border-radius: 50%;
-                       border: 1px solid #fff;
-                       overflow: hidden;
-                       img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                       }     
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        border: 1px solid #fff;
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
                     }
-                    .file{
+
+                    .file {
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
+
                         .form-control {
                             display: none;
                         }
+
                         label {
                             background-color: #0a0e1585;
                             padding: 8px;
@@ -58,6 +76,11 @@
                         }
                     }
                 }
+
+            }
+
+            .forgot-password {
+                text-align: right;
             }
         }
     }

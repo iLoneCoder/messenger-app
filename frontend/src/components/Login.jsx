@@ -82,6 +82,10 @@ function Login() {
                     <div className="form-group">
                         <span><Link to="/messenger/register">Create new account</Link></span>
                     </div>
+
+                    <div className="forgot-password">
+                        <span><Link to="/messenger/forgot-password">Forgot password?</Link></span>    
+                     </div>
                 </form>
             </div>
         </div>
